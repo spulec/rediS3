@@ -19,7 +19,7 @@ RediS3 is an implementation of the Redis API using S3 as a backend
 ```python
 
     >>> import redis3
-    >>> r = redis3.Client(access_key='1234', access_secret='secret')
+    >>> r = redis3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
     >>> r.set('foo', 'bar')
     True
     >>> r.get('foo')
@@ -32,7 +32,7 @@ RediS3 is an implementation of the Redis API using S3 as a backend
 ```python
 
     >>> import redis3
-    >>> r = redis3.Client(access_key='1234', access_secret='secret')
+    >>> r = redis3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
     >>> r.sadd('myset', 'Hello')
     1
     >>> r.sadd('myset', 'World')
