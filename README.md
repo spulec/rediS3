@@ -1,7 +1,7 @@
 # RediS3
 
-[![Build Status](https://travis-ci.org/spulec/RediS3.png?branch=master)](https://travis-ci.org/spulec/RediS3)
-[![Coverage Status](https://coveralls.io/repos/spulec/RediS3/badge.png?branch=master)](https://coveralls.io/r/spulec/RediS3)
+[![Build Status](https://travis-ci.org/spulec/rediS3.png?branch=master)](https://travis-ci.org/spulec/RediS3)
+[![Coverage Status](https://coveralls.io/repos/spulec/rediS3/badge.png?branch=master)](https://coveralls.io/r/spulec/RediS3)
 
 # In a nutshell
 
