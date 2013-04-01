@@ -46,5 +46,5 @@ RediS3 is an implementation of the Redis API using S3 as a backend
 ## Install
 
 ```console
-$ pip install redis3
+$ pip install rediS3
 ```
