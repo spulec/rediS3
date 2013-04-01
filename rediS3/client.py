@@ -30,6 +30,14 @@ class Client(object):
         else:
             return None
 
+    def delete(self, key_name):
+        key = self.get(key_name)
+        if key:
+            self.bucket.delete_key(key_name)
+            return 1
+        else:
+            return 0
+
     def keys(self, key_name):
         # S3 prefix filtering doesn't need *s
         key_name = key_name.rstrip("*")

@@ -36,3 +36,14 @@ def test_exists():
 
     client.exists("foo").should.equal(True)
     client.exists("foobar").should.equal(False)
+
+
+@mock_s3()
+def test_del():
+    client = rediS3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
+
+    client.delete('foo').should.equal(0)
+
+    client.set('foo', 'bar')
+
+    client.delete('foo').should.equal(1)
