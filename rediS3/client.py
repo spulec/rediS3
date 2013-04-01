@@ -39,6 +39,9 @@ class Client(object):
             result.append(pickle.loads(key.get_contents_as_string()))
         return result
 
+    def exists(self, key_name):
+        return bool(self.get(key_name))
+
     ##### Set Keys http://redis.io/commands#set ################################
 
     def sadd(self, key_name, value):

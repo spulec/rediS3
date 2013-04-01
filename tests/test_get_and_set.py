@@ -26,3 +26,13 @@ def test_get_keys():
     client.keys("ba*").should.equal(["bar3"])
 
     client.keys("other").should.equal(["bar4"])
+
+
+@mock_s3()
+def test_exists():
+    client = rediS3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
+
+    client.set('foo', 'bar')
+
+    client.exists("foo").should.equal(True)
+    client.exists("foobar").should.equal(False)
