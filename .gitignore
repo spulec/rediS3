@@ -1,0 +1,4 @@
+rediS3.egg-info/*
+dist/*
+.coverage
+*.pyc
