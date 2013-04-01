@@ -30,6 +30,15 @@ class Client(object):
         else:
             return None
 
+    def keys(self, key_name):
+        # S3 prefix filtering doesn't need *s
+        key_name = key_name.rstrip("*")
+
+        result = []
+        for key in self.bucket.get_all_keys(prefix=key_name):
+            result.append(pickle.loads(key.get_contents_as_string()))
+        return result
+
     ##### Set Keys http://redis.io/commands#set ################################
 
     def sadd(self, key_name, value):

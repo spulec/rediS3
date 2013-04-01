@@ -9,3 +9,20 @@ def test_get_and_set():
     client = rediS3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
     client.set('foo', 'bar').should.equal(True)
     client.get('foo').should.equal('bar')
+
+
+@mock_s3()
+def test_get_keys():
+    client = rediS3.Client(access_key='1234', access_secret='secret', bucket_name='my-bucket')
+
+    client.set('foo', 'bar1')
+    client.set('foobar', 'bar2')
+
+    client.set('baz', 'bar3')
+    client.set('other', 'bar4')
+
+    client.keys("fo*").should.equal(["bar1", "bar2"])
+
+    client.keys("ba*").should.equal(["bar3"])
+
+    client.keys("other").should.equal(["bar4"])
