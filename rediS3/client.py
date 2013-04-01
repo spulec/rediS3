@@ -4,15 +4,13 @@ import boto
 from boto.exception import S3ResponseError
 from boto.s3.key import Key
 
-import sure
-
 
 class Client(object):
     def __init__(self, access_key, access_secret, bucket_name):
         self.conn = boto.connect_s3(access_key, access_secret)
         try:
             self.bucket = self.conn.get_bucket(bucket_name)
-        except S3ResponseError as e:
+        except S3ResponseError:
             # If bucket doesn't exist, create it
             # TODO probably set private permissions
             self.bucket = self.conn.create_bucket(bucket_name)
