@@ -15,6 +15,8 @@ class Client(object):
             # TODO probably set private permissions
             self.bucket = self.conn.create_bucket(bucket_name)
 
+    ##### Generic Keys http://redis.io/commands#generic ########################
+
     def set(self, key_name, value):
         key = Key(self.bucket)
         key.key = key_name
@@ -27,6 +29,8 @@ class Client(object):
             return pickle.loads(key.get_contents_as_string())
         else:
             return None
+
+    ##### Set Keys http://redis.io/commands#set ################################
 
     def sadd(self, key_name, value):
         curr_value = self.get(key_name)
@@ -43,3 +47,6 @@ class Client(object):
 
     def smembers(self, key_name):
         return self.get(key_name)
+
+    def scard(self, key_name):
+        return len(self.smembers(key_name))
