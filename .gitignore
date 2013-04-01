@@ -1,3 +1,4 @@
+benchmark/config.py
 rediS3.egg-info/*
 dist/*
 .coverage

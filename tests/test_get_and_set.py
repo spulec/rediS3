@@ -21,11 +21,11 @@ def test_get_keys():
     client.set('baz', 'bar3')
     client.set('other', 'bar4')
 
-    client.keys("fo*").should.equal(["bar1", "bar2"])
+    client.keys("fo*").should.equal(["foo", "foobar"])
 
-    client.keys("ba*").should.equal(["bar3"])
+    client.keys("ba*").should.equal(["baz"])
 
-    client.keys("other").should.equal(["bar4"])
+    client.keys("other").should.equal(["other"])
 
 
 @mock_s3()

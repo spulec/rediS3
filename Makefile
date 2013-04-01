@@ -1,4 +1,5 @@
 SHELL := /bin/bash
+.PHONY: benchmark
 
 init:
 	python setup.py develop
@@ -7,3 +8,6 @@ init:
 test:
 	rm -f .coverage
 	nosetests --with-coverage ./tests/
+
+benchmark:
+	python benchmark/benchmark.py
