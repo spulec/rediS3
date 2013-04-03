@@ -1,6 +1,6 @@
 # RediS3
 
-## WARNING: this project is unstable and under active development
+## WARNING: this project is mostly just a crazy idea to get some benchmarks. It is unstable.
 
 [![Build Status](https://travis-ci.org/spulec/rediS3.png?branch=master)](https://travis-ci.org/spulec/RediS3)
 [![Coverage Status](https://coveralls.io/repos/spulec/rediS3/badge.png?branch=master)](https://coveralls.io/r/spulec/RediS3)
@@ -45,8 +45,8 @@ RediS3 is an implementation of the Redis API using S3 as a backend
     ['Hello', 'World']
 ```
 
-## Install
+<!-- ## Install
 
 ```console
 $ pip install rediS3
-```
+``` -->
